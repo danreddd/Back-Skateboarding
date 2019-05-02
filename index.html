@@ -1,45 +1,77 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html>
 <head>
-
-<title>Site Maintenance</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-  body { text-align: center; padding: 150px; }
-  h1 { font-size: 50px; }
-  body { font: 20px Helvetica, sans-serif; color: #333; }
-  article { display: block; text-align: left; width: 650px; margin: 0 auto; }
-  a { color: #dc8100; text-decoration: none; }
-  a:hover { color: #333; text-decoration: none; }
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  font-size: 17px;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
 </style>
-
-
-
 </head>
-
-
 <body>
-<article>
-    <h1>We&rsquo;ll be back soon!</h1>
-    <div>
-        <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always <a href="mailto:backskateboarding@gmail.com">contact us</a>, otherwise we&rsquo;ll be back online shortly!</p>
-        <p>&mdash; The Back Skateboarding Team.</p>
-    </div>
-</article>
 
+<video autoplay loop id="myVideo">
+  <source src="backskateing.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+<div class="content">
+  
+  <button id="myBtn" onclick="myFunction()">Pause</button>
+</div>
 
 <script>
-document.addEventListener("contextmenu", function(e){
-    e.preventDefault();
-}, false);
+var video = document.getElementById("myVideo");
+var btn = document.getElementById("myBtn");
+
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}
 </script>
 
-
-
-
 </body>
-
-
-</html>
 </html>
